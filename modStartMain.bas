@@ -58,6 +58,9 @@ Public Sub Main()
             
             'Merge the many PDFs to a single PDF using each individual pdf file name as a bookmark name.
             modMergePDF.MergePDFFiles sRawPDFFilesDir, sSinglePDFOutputDir, sSinglePDFOutputName, bRemovePdfExtFromBookMark, bCaseSensitiveSort
+            
+            End
+            Exit Sub
         Else
             End
             Exit Sub
