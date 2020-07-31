@@ -1,0 +1,7 @@
+frmMergePDF = 52, 52, 1237, 676, Z, 26, 26, 1211, 650, C
+modStartMain = 130, 130, 1315, 754, 
+modCommonDlg = 260, 260, 1445, 884, 
+modUtil = 208, 208, 1393, 832, 
+modMergePDF = 104, 104, 1289, 728, 
+clsUtil = 130, 130, 1419, 614, 
+modRegistry = 0, 0, 0, 0, C
