@@ -167,7 +167,7 @@ Public Function BuildBatchFileCode(psRawPDFFilesDir As String, _
                     & "|CaseSensitiveSort|" & CStr(pbCaseSensitiveSort)
 
     BuildBatchFileCode = """" & App.Path & "\" & App.EXEName & ".exe"" """ & sCommandLine
-Exit Function
+    Exit Function
 EH:
     goUtil.utErrorLog Err, App.EXEName, msClassName, "Public Function BuildBatchFileCode"
 End Function
