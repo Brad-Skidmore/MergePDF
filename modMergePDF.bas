@@ -48,6 +48,11 @@ Public Function MergePDFFiles(psRawPDFFilesDir As String, _
     
     
     sRawPDFFilesDir = psRawPDFFilesDir
+    'ensure backslash for the 2 b merged PDF files directory
+    If StrComp(Right(sRawPDFFilesDir, 1), "\", vbBinaryCompare) <> 0 Then
+        sRawPDFFilesDir = sRawPDFFilesDir & "\"
+    End If
+    
     sSinglePDFOutputDir = psSinglePDFOutputDir
     sSinglePDFOutputName = psSinglePDFOutputName
     
