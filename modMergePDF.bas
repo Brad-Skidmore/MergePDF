@@ -51,10 +51,16 @@ Public Function MergePDFFiles(psRawPDFFilesDir As String, _
     'ensure backslash for the 2 b merged PDF files directory
     If StrComp(Right(sRawPDFFilesDir, 1), "\", vbBinaryCompare) <> 0 Then
         sRawPDFFilesDir = sRawPDFFilesDir & "\"
+        psRawPDFFilesDir = sRawPDFFilesDir
     End If
     
     sSinglePDFOutputDir = psSinglePDFOutputDir
     sSinglePDFOutputName = psSinglePDFOutputName
+    'ensure .pdf for the PDFOutputName (If it's CAP .PDF should be okay)
+    If StrComp(Right(sSinglePDFOutputName, 3), ".pdf", vbTextCompare) <> 0 Then
+        sSinglePDFOutputName = sSinglePDFOutputName & ".pdf"
+        psSinglePDFOutputName = sSinglePDFOutputName
+    End If
     
     Set oFSO = New Scripting.FileSystemObject
     
@@ -162,6 +168,18 @@ Public Function BuildBatchFileCode(psRawPDFFilesDir As String, _
     Dim sSinglePDFOutputDir As String: sSinglePDFOutputDir = psSinglePDFOutputDir
     Dim sSinglePDFOutputName As String: sSinglePDFOutputName = psSinglePDFOutputName
     Dim bRemovePdfExtFromBookMark As Boolean: bRemovePdfExtFromBookMark = pbRemovePdfExtFromBookMark
+    
+    'ensure backslash for the 2 b merged PDF files directory
+    If StrComp(Right(sRawPDFFilesDir, 1), "\", vbBinaryCompare) <> 0 Then
+        sRawPDFFilesDir = sRawPDFFilesDir & "\"
+        psRawPDFFilesDir = sRawPDFFilesDir
+    End If
+    
+    'ensure .pdf for the PDFOutputName (If it's CAP .PDF should be okay)
+    If StrComp(Right(sSinglePDFOutputName, 3), ".pdf", vbTextCompare) <> 0 Then
+        sSinglePDFOutputName = sSinglePDFOutputName & ".pdf"
+        psSinglePDFOutputName = sSinglePDFOutputName
+    End If
     
     Dim sCommandLine As String
     

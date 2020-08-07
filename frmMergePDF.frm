@@ -158,7 +158,7 @@ Private Sub DoMerge(Optional pBuildBatchFileCodeOnly As Boolean = False)
         modMergePDF.MergePDFFiles sRawPDFFilesDir, sSinglePDFOutputDir, sSinglePDFOutputName, bRemovePdfExtFromBookMark, bCaseSensitiveSort, True
         
         'Show the directory
-        goUtil.utShellExecute Me.hWnd, , txtMergedPDFFileNamePath.Text
+        goUtil.utShellExecute Me.hWnd, , sSinglePDFOutputDir & sSinglePDFOutputName
     End If
     
     'Build the Batch File Code
