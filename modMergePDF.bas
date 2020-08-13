@@ -57,7 +57,7 @@ Public Function MergePDFFiles(psRawPDFFilesDir As String, _
     sSinglePDFOutputDir = psSinglePDFOutputDir
     sSinglePDFOutputName = psSinglePDFOutputName
     'ensure .pdf for the PDFOutputName (If it's CAP .PDF should be okay)
-    If StrComp(Right(sSinglePDFOutputName, 3), ".pdf", vbTextCompare) <> 0 Then
+    If StrComp(Right(sSinglePDFOutputName, 4), ".pdf", vbTextCompare) <> 0 Then
         sSinglePDFOutputName = sSinglePDFOutputName & ".pdf"
         psSinglePDFOutputName = sSinglePDFOutputName
     End If
